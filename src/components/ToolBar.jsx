@@ -7,36 +7,51 @@ export default function ToolBar({ tool, setTool, showGrid, setShowGrid }) {
     { id: 'eraser', label: 'Eraser', icon: <Eraser size={24} /> },
     { id: 'shape', label: 'Shape', icon: '◯▢' },
     { id: 'fill', label: 'Fill', icon: <Droplet size={24} /> }
-
   ];
-  
+
+  const baseClasses =
+    'p-2 rounded-md transition-all duration-150 ease-in-out relative overflow-hidden group';
+
+  const activeClasses =
+    'bg-blue-600 text-white shadow-lg scale-110';
+
+  const inactiveClasses =
+    'bg-gray-700 hover:bg-gray-600 text-gray-200';
+
+  const iconClasses =
+    'transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow-glow';
+
   return (
     <div className="flex items-center justify-center sm:justify-start flex-wrap gap-2 w-full sm:w-auto">
       {tools.map((t) => (
         <button
           key={t.id}
           onClick={() => setTool(t.id)}
-          className={`p-2 rounded-md transition-all ${
-            tool === t.id
-              ? 'bg-blue-600 text-white shadow-lg transform scale-110'
-              : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
+          className={`${baseClasses} ${
+            tool === t.id ? activeClasses : inactiveClasses
           }`}
           title={t.label}
         >
-          {t.icon}
+          <span className="absolute inset-0 bg-current opacity-20 rounded-full scale-0 group-active:scale-150 transition-transform duration-300" />
+          <span className={`${iconClasses} ${tool === t.id ? 'animate-bounceTool' : ''}`}>
+  {t.icon}
+</span>
+
         </button>
       ))}
-      
+
+      {/* Grid Toggle Button */}
       <button
         onClick={() => setShowGrid(!showGrid)}
-        className={`p-2 rounded-md transition-all ${
-          showGrid
-            ? 'bg-blue-600 text-white shadow-lg transform scale-110'
-            : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
+        className={`${baseClasses} ${
+          showGrid ? activeClasses : inactiveClasses
         }`}
         title="Toggle Grid"
       >
-        <Grid size={24} />
+        <span className="absolute inset-0 bg-current opacity-20 rounded-full scale-0 group-active:scale-150 transition-transform duration-300" />
+        <span className={iconClasses}>
+          <Grid size={24} />
+        </span>
       </button>
     </div>
   );

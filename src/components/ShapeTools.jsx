@@ -19,8 +19,8 @@ export default function ShapeTools({ selectedShape, setSelectedShape, setTool })
             onClick={() => handleShapeSelect(shape.id)}
             className={`w-10 h-10 flex items-center justify-center rounded-md transition-all ${
               selectedShape === shape.id
-                ? 'bg-blue-600 text-white shadow-lg transform scale-110'
-                : 'bg-gray-700 hover:bg-gray-600 text-gray-200'
+                ? 'bg-pink-300 hover:bg-pink-400 text-white  shadow-lg transform scale-110'
+                : 'bg-teal-400 hover:bg-teal-500 text-white'
             }`}
             title={shape.label}
           >

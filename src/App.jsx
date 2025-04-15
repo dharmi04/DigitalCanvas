@@ -79,7 +79,7 @@ export default function App() {
   }, [historyIndex, history]);
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#fdfcfb] via-[#e2d1c3] to-[#a1c4fd] text-white">
       <Header />
       
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-6">

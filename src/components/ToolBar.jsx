@@ -13,10 +13,10 @@ export default function ToolBar({ tool, setTool, showGrid, setShowGrid }) {
     'p-2 rounded-md transition-all duration-150 ease-in-out relative overflow-hidden group';
 
   const activeClasses =
-    'bg-blue-600 text-white shadow-lg scale-110';
+    'bg-pink-300 hover:bg-pink-400 text-white shadow-lg scale-110';
 
   const inactiveClasses =
-    'bg-gray-700 hover:bg-gray-600 text-gray-200';
+    'bg-teal-400 hover:bg-teal-500 text-white';
 
   const iconClasses =
     'transition-transform duration-200 group-hover:scale-110 group-hover:drop-shadow-glow';

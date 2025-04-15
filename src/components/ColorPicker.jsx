@@ -10,10 +10,8 @@ export default function ColorPicker({ color, setColor }) {
     '#FF8800', // Orange
     '#FFFF00', // Yellow
     '#00FF00', // Green
-    '#00FFFF', // Cyan
     '#0000FF', // Blue
     '#8800FF', // Purple
-    '#FF00FF', // Magenta
   ];
   
   const handleColorChange = (e) => {
